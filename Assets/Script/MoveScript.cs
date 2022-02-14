@@ -39,7 +39,6 @@ public class MoveScript : MonoBehaviour
 
     void OnAnimatorMove()
     {
-        //_rigidbody.MovePosition(_rigidbody.position + _movement * _animator.deltaPosition.magnitude);
         _rigidbody.MoveRotation(_rotation);
     }
 }

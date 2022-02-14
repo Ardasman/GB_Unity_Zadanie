@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Waypoint : MonoBehaviour
 {
-    [SerializeField] public NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
 
     public Transform[] waypoints;
     int m_CurrentWaypointIndex;
@@ -15,7 +15,7 @@ public class Waypoint : MonoBehaviour
         navMeshAgent.SetDestination(waypoints[0].position);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
         {

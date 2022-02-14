@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class SpawnFirstAid : MonoBehaviour
 {
-    [SerializeField]  private float _spawnRangeX = 40f;
-    [SerializeField]  private float _spawnPosZ = 40f;
 
-    public GameObject[] _firstAidPrefabs;
-
-
-
-    void Start()
-    {
-        
-    }
+    public GameObject firstAidPrefabs;
+    public Transform[] AidPrefabs;
+    public float AidInGameMax;
+    float AidInGameCurrent = 0f;
 
     void Update()
-    {
-        
-            Vector3 spawnPos = new Vector3(Random.Range(-_spawnRangeX, _spawnRangeX), 0, Random.Range(-_spawnPosZ, _spawnPosZ));
-            int firstAidIndex = Random.Range(0, _firstAidPrefabs.Length);
-            Instantiate(_firstAidPrefabs[firstAidIndex], spawnPos, _firstAidPrefabs[firstAidIndex].transform.rotation);
-            Destroy(gameObject, 0.38f);
+    {  
+           if(AidInGameCurrent < AidInGameMax)
+        { 
+
+            int firstAidIndex = Random.Range(0, AidPrefabs.Length);
+            Transform pos = AidPrefabs[firstAidIndex];
+
+            Instantiate(firstAidPrefabs, pos.transform.position, firstAidPrefabs.transform.rotation);
+
+            AidInGameCurrent++;
+        }
 
 
     }

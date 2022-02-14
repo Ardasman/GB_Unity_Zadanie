@@ -844,9 +844,10 @@ GameObject:
   - component: {fileID: 7438738072484405706}
   - component: {fileID: 3576288450122217075}
   - component: {fileID: 142462114116109389}
+  - component: {fileID: -4988385357840016485}
   m_Layer: 0
   m_Name: JohnLemon
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -929,6 +930,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 20
+--- !u!114 &-4988385357840016485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6077229646317852079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33c7eac23ead40c99b66d7d9146beb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBase: 1000
+  healthCurrent: 0
 --- !u!1 &7028247037451646163
 GameObject:
   m_ObjectHideFlags: 0
