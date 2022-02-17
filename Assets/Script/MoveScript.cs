@@ -5,6 +5,10 @@ using UnityEngine;
 public class MoveScript : MonoBehaviour
 {
     public float turnSpeed = 20f;
+    public float walkSpeed = 1f;
+    public float speedUp = 2f;
+    public float damageSpeed = 1f;
+    private float walkSpeedBust = 1f;
 
     Vector3 _movement;
     Rigidbody _rigidbody;
@@ -23,6 +27,16 @@ public class MoveScript : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
+        if (Input.GetButton("SpeedUp"))
+        {
+            walkSpeedBust = walkSpeed + speedUp;
+
+            PlayerHealthController playerHealthController = GetComponent<PlayerHealthController>();
+            playerHealthController.TakeDamage(damageSpeed);
+        }
+
+        else { walkSpeedBust = walkSpeed; }
+        
         _movement.Set(horizontal, 0f, vertical);
         _movement.Normalize();
 
@@ -33,8 +47,10 @@ public class MoveScript : MonoBehaviour
         _animator.SetBool("IsWalking", isWalking);
 
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, _movement, turnSpeed * Time.deltaTime, 0f);
-        _rigidbody.MovePosition(_rigidbody.position + _movement * _animator.deltaPosition.magnitude);
+        _rigidbody.MovePosition(_rigidbody.position + _movement* walkSpeedBust * _animator.deltaPosition.magnitude);
         _rotation = Quaternion.LookRotation(desiredForward);
+
+     
     }
 
     void OnAnimatorMove()

@@ -6,11 +6,14 @@ public class Bull : MonoBehaviour
 {
     public float speed;
     public float fireDamage;
+    //public GameObject bullEffect;
 
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         Destroy(gameObject, 0.5f);
+
+        //BullFire();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,4 +24,13 @@ public class Bull : MonoBehaviour
             enemy.TakeDamage(fireDamage);
         }
     }
-}
+
+    //void BullFire()
+    //{
+    //    GameObject bullFire = Instantiate(bullEffect, transform.position, transform.rotation);
+    //    if (bullFire != null)
+    //    {
+    //        Destroy(bullFire, 0.5f);
+    //    }
+    //}
+}   
