@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class KeyDoor : MonoBehaviour
 {
-    public Animator animator;
-    //public Animator animator3;
+    public Animator animatorDoor;
+    public Animator animatorKey;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Key1")
         {
-            animator.Play("DoorOpn");
+            animatorDoor.Play("DoorOpn");
+            animatorKey.Play("BootOn");
         }
 
         //if (other.tag == "Key3")

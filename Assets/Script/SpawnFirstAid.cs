@@ -8,11 +8,11 @@ public class SpawnFirstAid : MonoBehaviour
     public GameObject firstAidPrefabs;
     public Transform[] AidPrefabs;
     public float AidInGameMax;
-    float AidInGameCurrent = 0f;
+    float _AidInGameCurrent = 0f;
 
     void Update()
     {  
-           if(AidInGameCurrent < AidInGameMax)
+           if(_AidInGameCurrent < AidInGameMax)
         { 
 
             int firstAidIndex = Random.Range(0, AidPrefabs.Length);
@@ -20,7 +20,7 @@ public class SpawnFirstAid : MonoBehaviour
 
             Instantiate(firstAidPrefabs, pos.transform.position, firstAidPrefabs.transform.rotation);
 
-            AidInGameCurrent++;
+            _AidInGameCurrent++;
         }
 
 

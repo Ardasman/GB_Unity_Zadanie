@@ -19,7 +19,6 @@ public class MoveScript : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
-
     }
 
     void FixedUpdate()
@@ -36,7 +35,7 @@ public class MoveScript : MonoBehaviour
         }
 
         else { walkSpeedBust = walkSpeed; }
-        
+
         _movement.Set(horizontal, 0f, vertical);
         _movement.Normalize();
 
@@ -49,8 +48,6 @@ public class MoveScript : MonoBehaviour
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, _movement, turnSpeed * Time.deltaTime, 0f);
         _rigidbody.MovePosition(_rigidbody.position + _movement* walkSpeedBust * _animator.deltaPosition.magnitude);
         _rotation = Quaternion.LookRotation(desiredForward);
-
-     
     }
 
     void OnAnimatorMove()

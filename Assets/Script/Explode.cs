@@ -10,22 +10,22 @@ public class Explode : MonoBehaviour
     public float damage = 49f;
     public GameObject explodeEffect;
 
-    float count;
-    bool isBoom = false;
+    float _count;
+    bool _isBoom = false;
 
 
     void Start()
     {
-        count = delay;
+        _count = delay;
     }
 
     void Update()
     {
-        count -= Time.deltaTime;
-        if (count <= 0f && !isBoom)
+        _count -= Time.deltaTime;
+        if (_count <= 0f && !_isBoom)
         {
             ExplodeDynamite();
-            isBoom = true;
+            _isBoom = true;
             Destroy(gameObject);
         }
 

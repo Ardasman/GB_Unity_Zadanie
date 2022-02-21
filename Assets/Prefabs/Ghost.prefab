@@ -826,7 +826,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 3540391287371809819}
+  distansPatrol: 0
+  stopPursuit: 0
+  speed: 0
+  point: {fileID: 0}
   waypoints: []
+  player: {fileID: 0}
 --- !u!114 &6114701861856440587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1286,6 +1291,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6925745739663848697}
     m_Modifications:
+    - target: {fileID: 1269398986168298551, guid: a40dfcb05a3614e459b0d529230d18e4,
+        type: 3}
+      propertyPath: m_Height
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269398986168298551, guid: a40dfcb05a3614e459b0d529230d18e4,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 2167295384483934259, guid: a40dfcb05a3614e459b0d529230d18e4,
         type: 3}
       propertyPath: m_Name
@@ -1309,7 +1324,7 @@ PrefabInstance:
     - target: {fileID: 4730398091545990098, guid: a40dfcb05a3614e459b0d529230d18e4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.321
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: 4730398091545990098, guid: a40dfcb05a3614e459b0d529230d18e4,
         type: 3}

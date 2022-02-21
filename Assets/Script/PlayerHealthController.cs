@@ -34,4 +34,15 @@ public class PlayerHealthController : MonoBehaviour
             SetHealth();
         }
     }
+
+    public bool IsPlayerDead()
+    {
+        bool _isPlayerDead = false;
+
+        if (healthCurrent <=0)
+        {
+            _isPlayerDead = true;
+        }
+        return _isPlayerDead;
+    }
 }
