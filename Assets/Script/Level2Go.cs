@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameEnding : MonoBehaviour
+public class Level2Go : MonoBehaviour
 {
     public float fadeDuration = 1f;
     public float displayImageDuration = 1f;
     public GameObject player;
-    public CanvasGroup exitGroup;
-   
+    public CanvasGroup level2Group;
 
-    bool _isPlayerWin;
+
+    bool _isPlayerChangeLevel;
     float _timer;
 
     void Update()
     {
 
-        if (_isPlayerWin)
+        if (_isPlayerChangeLevel)
         {
-            EndLevel(true);
+            ChangeLevel(true);
         }
     }
 
@@ -27,25 +27,21 @@ public class GameEnding : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            _isPlayerWin = true;
+            _isPlayerChangeLevel = true;
         }
     }
 
-    void EndLevel(bool doRestart)
+    void ChangeLevel(bool goLevel2)
     {
         _timer += Time.deltaTime;
 
-        exitGroup.alpha = _timer / fadeDuration;
+        level2Group.alpha = _timer / fadeDuration;
 
         if (_timer > fadeDuration + displayImageDuration)
 
-            if (doRestart)
+            if (goLevel2)
             {
-                SceneManager.LoadScene(0);
-            }
-            else
-            {
-                Application.Quit();
+                SceneManager.LoadScene(2);
             }
     }
 }
