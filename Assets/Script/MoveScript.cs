@@ -10,6 +10,8 @@ public class MoveScript : MonoBehaviour
     public float damageSpeed = 1f;
     private float walkSpeedBust = 1f;
 
+    //private AudioSource _audioSource;
+
     Vector3 _movement;
     Rigidbody _rigidbody;
     Animator _animator;
@@ -19,6 +21,9 @@ public class MoveScript : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
+
+        //_audioSource = GetComponent<AudioSource>();
+
     }
 
     void FixedUpdate()
@@ -32,6 +37,8 @@ public class MoveScript : MonoBehaviour
 
             PlayerHealthController playerHealthController = GetComponent<PlayerHealthController>();
             playerHealthController.TakeDamage(damageSpeed);
+
+            //_audioSource.Play();
         }
 
         else { walkSpeedBust = walkSpeed; }

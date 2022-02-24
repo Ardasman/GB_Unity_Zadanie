@@ -19,5 +19,6 @@ public class MenuOpen2 : MonoBehaviour
     public void GoToMain()
     {
         SceneManager.LoadScene("Level_1");
+        Time.timeScale = 1f;
     }
 }

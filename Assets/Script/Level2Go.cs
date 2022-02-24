@@ -16,7 +16,6 @@ public class Level2Go : MonoBehaviour
 
     void Update()
     {
-
         if (_isPlayerChangeLevel)
         {
             ChangeLevel(true);

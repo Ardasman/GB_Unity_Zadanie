@@ -20,6 +20,7 @@ public class MenuOpen : MonoBehaviour
     public void GoToMain()
     {
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 0f;
     }
 
 }

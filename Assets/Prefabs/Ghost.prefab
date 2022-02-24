@@ -829,7 +829,6 @@ MonoBehaviour:
   distansPatrol: 0
   stopPursuit: 0
   speed: 0
-  point: {fileID: 0}
   waypoints: []
   player: {fileID: 0}
 --- !u!114 &6114701861856440587
@@ -846,6 +845,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBase: 50
   healthCurrent: 0
+  scoreForKill: 0
+  scoreText: {fileID: 0}
 --- !u!114 &1450178783282187425
 MonoBehaviour:
   m_ObjectHideFlags: 0
